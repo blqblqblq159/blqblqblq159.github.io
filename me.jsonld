@@ -1,0 +1,15 @@
+{
+  "@context": {
+     "attendee": {
+        "@id":"http://schema.org/attendee",
+        "@type": "@id"
+     },
+     "name": {
+        "@id" : "http://xmlns.com/foaf/0.1/name",
+        "@language": "en"
+      }
+  },
+  "@id": "https://github.com/blqblqblq159",
+  "name": "Wannes De Breuck",
+  "attends" : "https://data.knows.idlab.ugent.be/event/solid-linked-data-workshops-2022-01/#"
+}
