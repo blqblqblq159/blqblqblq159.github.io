@@ -1,0 +1,12 @@
+prefixes:
+ ex: "http://example.com/"
+ dbo: "http://dbpedia.org/ontology/"
+
+mappings:
+  meals:
+    sources:
+      - ['meal_w.json~jsonpath', '$meals[*]']
+    s: http://example.com/$(strMeal)
+    po:
+      - [a, $(strMeal)]
+      - [dbo:category, $(strCategory)]
