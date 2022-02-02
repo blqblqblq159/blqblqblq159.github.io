@@ -1,12 +1,42 @@
 prefixes:
  ex: "http://example.com/"
  dbo: "http://dbpedia.org/ontology/"
+ sch: "https://schema.org/"
+ dcterms: "http://purl.org/dc/terms/"
+ cwork: "http://www.bbc.co.uk/ontologies/creativework/"
 
 mappings:
-  meals:
+  person:
     sources:
-      - ['meal_w.json~jsonpath', '$meals[*]']
-    s: http://example.com/$(strMeal)
+      - ['meals.json~jsonpath', '$.meals[*]']
+    s: https://www.themealdb.com/api/json/v1/1/lookup.php?i=$(idMeal)
     po:
-      - [a, $(strMeal)]
-      - [dbo:category, $(strCategory)]
+      - [a, sch:Recipe]
+      - [sch:recipeCategory, $(strCategory)]
+      - [sch:name, $(strMeal)]
+      - [dbo:location, $(strArea)]
+      - [sch:recipeInstructions, $(strInstructions)]
+      - [dbo:picture, $(strMealThumb)]
+      - [ex:yt, $(strYoutube)]
+      - [dcterms:source, $(strSource)]
+      - [sch:recipeIngredient, $(strMeasure1) of $(strIngredient1)]
+      - [sch:recipeIngredient, $(strMeasure2) of $(strIngredient2)]
+      - [sch:recipeIngredient, $(strMeasure3) of $(strIngredient3)]
+      - [sch:recipeIngredient, $(strMeasure4) of $(strIngredient4)]
+      - [sch:recipeIngredient, $(strMeasure5) of $(strIngredient5)]
+      - [sch:recipeIngredient, $(strMeasure6) of $(strIngredient6)]
+      - [sch:recipeIngredient, $(strMeasure7) of $(strIngredient7)]
+      - [sch:recipeIngredient, $(strMeasure8) of $(strIngredient8)]
+      - [sch:recipeIngredient, $(strMeasure9) of $(strIngredient9)]
+      - [sch:recipeIngredient, $(strMeasure10) of $(strIngredient10)]
+      - [sch:recipeIngredient, $(strMeasure11) of $(strIngredient11)]
+      - [sch:recipeIngredient, $(strMeasure12) of $(strIngredient12)]
+      - [sch:recipeIngredient, $(strMeasure13) of $(strIngredient13)]
+      - [sch:recipeIngredient, $(strMeasure14) of $(strIngredient14)]
+      - [sch:recipeIngredient, $(strMeasure15) of $(strIngredient15)]
+      - [sch:recipeIngredient, $(strMeasure16) of $(strIngredient16)]
+      - [sch:recipeIngredient, $(strMeasure17) of $(strIngredient17)]
+      - [sch:recipeIngredient, $(strMeasure18) of $(strIngredient18)]
+      - [sch:recipeIngredient, $(strMeasure19) of $(strIngredient19)]
+      - [sch:recipeIngredient, $(strMeasure20) of $(strIngredient20)]
+      - [cwork:tag, $(strTags)]
